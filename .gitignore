@@ -98,6 +98,16 @@ InitTestScene*.unity*
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 
-*Assets
+Assets/Tutorial_Demo*
+/Assets/Prefabs*
+Assets/Art*
 *Library
 *Temp
+/Tanks/Assets/_Tanks/Art
+/Tanks/Assets/_Tanks/Audio
+/Tanks/Assets/_Tanks/Prefabs
+/Tanks/Assets/_Tanks/Settings/TextMesh Pro
+/Tanks/Assets/_Tanks/Tutorial_Demo
+Tanks/Assets/_Tanks/Tanks\!_Third-PartyNotice.txt
+Tanks/Assets/_Tanks/Tanks\!_Documentation.txt.meta
+Tanks/Assets/_Tanks/Tanks\!_Documentation.txt
