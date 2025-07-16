@@ -164,7 +164,7 @@ namespace Tanks.Complete
 
         private void DustTrails()
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
             {
                 if (tankParticlesLeft != null)
                 {
