@@ -42,7 +42,12 @@ namespace Tanks.Complete
         private InputAction m_TurnAction;             // The InputAction used to shot, retrieved from TankInputUser
 
         private Vector3 m_RequestedDirection;       // In Direct Control mode, store the direction the user *wants* to go toward
-        
+
+        [Tooltip("Dust Trails for behind the tank")]
+        public ParticleSystem tankParticlesLeft;
+        public ParticleSystem tankParticlesRight;
+
+
         private void Awake ()
         {
             m_Rigidbody = GetComponent<Rigidbody> ();
@@ -151,9 +156,34 @@ namespace Tanks.Complete
             {
                 m_MovementInputValue = m_MoveAction.ReadValue<float>();
                 m_TurnInputValue = m_TurnAction.ReadValue<float>();
+                DustTrails();
             }
             
             EngineAudio ();
+        }
+
+        private void DustTrails()
+        {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (tankParticlesLeft != null)
+                {
+                    tankParticlesLeft.Play();
+                    tankParticlesRight.Play();
+                }
+
+                // Move tank forward (optional):
+                // transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            }
+
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                if (tankParticlesLeft != null)
+                {
+                    tankParticlesLeft.Stop();
+                    tankParticlesRight.Stop();
+                }
+            }
         }
 
 
