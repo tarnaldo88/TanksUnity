@@ -181,7 +181,11 @@ namespace Tanks.Complete
                 if (tankParticlesLeft != null)
                 {
                     tankParticlesLeft.Stop();
-                    tankParticlesRight.Stop();                    
+                    tankParticlesRight.Stop();
+
+                    //Tank keeps sliding around so when tank stops moving change velocity to zero to prevent inertia having tank slide endlessly
+                    m_Rigidbody.angularVelocity = Vector3.zero;
+                    tankParticlesRight.Stop();
                 }
             }
         }
